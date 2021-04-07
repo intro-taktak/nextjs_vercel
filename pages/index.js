@@ -1,10 +1,24 @@
 import Head from 'next/head'
+import { makeStyles } from '@material-ui/core/styles';
 import styles from '../styles/Home.module.css'
 import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
+
+const useStyles = makeStyles((theme) => ({
+  fabDial: {
+      zIndex: 100000,
+      position: 'absolute',
+      bottom: theme.spacing(1),
+      right: theme.spacing(1),
+  },
+}));
+
 
 export default function Home() {
+  const classes = useStyles();
+
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Intro</title>
         <link rel="icon" href="/favicon.ico" />
@@ -21,6 +35,10 @@ export default function Home() {
         </p>
         <Button variant="contained">Hello World</Button>
       </main>
+
+      <Fab variant="extended" className={classes.fabDial}>
+        문의하기
+      </Fab>
 
       <footer className={styles.footer}>
         <a
