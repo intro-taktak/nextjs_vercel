@@ -2,6 +2,12 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import Popover from '@material-ui/core/Popover';
+import Typography from '@material-ui/core/Typography';
+import Fab from '@material-ui/core/Fab';
+import MessageIcon from '@material-ui/icons/Message';
+import Backdrop from '@material-ui/core/Backdrop';
 
 export default () => {
   const [status, setStatus] = useState({
@@ -10,6 +16,7 @@ export default () => {
     info: { error: false, msg: null },
   })
   const [inputs, setInputs] = useState({
+    phone: '',
     email: '',
     message: '',
   })
@@ -21,6 +28,7 @@ export default () => {
         info: { error: false, msg: msg },
       })
       setInputs({
+        phone: '',
         email: '',
         message: '',
       })
@@ -60,40 +68,124 @@ export default () => {
         handleServerResponse(false, error.response.data.error)
       })
   }
+
+  const useStyles = makeStyles((theme) => ({
+    typography: {
+      padding: theme.spacing(2),
+    },
+    fab: {
+      position: 'absolute',
+      bottom: theme.spacing(3),
+      right: theme.spacing(3),
+    },
+    extendedIcon: {
+      marginRight: theme.spacing(1),
+    },
+    backdrop: {
+      zIndex: theme.zIndex.drawer + 1,
+      color: '#fff',
+    },
+    popover: {
+      marginTop: theme.spacing(-5),
+    }
+  }));
+
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+
   return (
     <main>
-      <form onSubmit={handleOnSubmit}>
-        <TextField
-          id="email"
-          type="email"
-          name="_replyto"
-          onChange={handleOnChange}
-          required
-          value={inputs.email}
-          label="email"
-        ></TextField>
-        
-        <br></br>
 
-        <TextField
-          id="message"
-          name="message"
-          onChange={handleOnChange}
-          required
-          value={inputs.message}
-          label="message"
-          rowsMax={5}
-          multiline
-        />
-        <br/><br/>
-        <Button variant="contained" type="submit" disabled={status.submitting}>
-          {!status.submitting
-            ? !status.submitted
-              ? 'Submit'
-              : 'Submitted'
-            : 'Submitting...'}
-        </Button>
-      </form>
+
+<div>
+        <Fab
+          variant="extended"
+          color="primary"
+          aria-label="add"
+          className={classes.fab}
+          onClick={handleClick}
+          aria-describedby={id}
+        >
+          <MessageIcon className={classes.extendedIcon} />
+          문의하기
+        </Fab>
+        <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
+        <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        className={classes.popover}
+      >
+        <Typography className={classes.typography}>인트로에 문의할 내용이 있나요?</Typography>
+          <form onSubmit={handleOnSubmit}>
+            <TextField
+              id="phone"
+              type="text"
+              name="phone"
+              onChange={handleOnChange}
+              required
+              value={inputs.phone}
+              label="phone"
+            ></TextField>
+            <br></br>
+            <TextField
+              id="email"
+              type="email"
+              name="_replyto"
+              onChange={handleOnChange}
+              required
+              value={inputs.email}
+              label="email"
+            ></TextField>
+            <br></br>
+            <TextField
+              id="message"
+              name="message"
+              onChange={handleOnChange}
+              required
+              value={inputs.message}
+              label="message"
+              rowsMax={5}
+              multiline
+            />
+            <br/><br/>
+            <Button variant="contained" type="submit" disabled={status.submitting}>
+              {!status.submitting
+                ? !status.submitted
+                  ? 'Submit'
+                  : 'Submitted'
+                : 'Submitting...'}
+            </Button>
+        </form>
+      </Popover>
+      </Backdrop>
+      
+    </div>
+
+
+
+
+      
       {status.info.error && (
         <div className="error">Error: {status.info.msg}</div>
       )}
