@@ -9,10 +9,9 @@ import Fab from '@material-ui/core/Fab';
 import MessageIcon from '@material-ui/icons/Message';
 import Backdrop from '@material-ui/core/Backdrop';
 import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 
-export default () => {
+const ContactForm = () => {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -74,10 +73,9 @@ export default () => {
 
   const useStyles = makeStyles((theme) => ({
     typography: {
-      paddingTop: theme.spacing(1),
-      paddingBottom: theme.spacing(3),
-      paddingLeft: theme.spacing(3),
-      paddingRight: theme.spacing(3),
+      paddingBottom: theme.spacing(2),
+      paddingLeft: theme.spacing(2),
+      paddingRight: theme.spacing(2),
     },
     fab: {
       position: 'absolute',
@@ -92,7 +90,7 @@ export default () => {
       color: '#fff',
     },
     popover: {
-      marginTop: theme.spacing(-5),
+      marginTop: theme.spacing(-3),
     },
     media: {
       backgroundColor: '#c4001a',
@@ -150,13 +148,13 @@ export default () => {
         className={classes.popover}
       >
         <Card className={classes.root}>
-        <CardMedia
+        <CardContent
           className={classes.media}
           title="Contemplative Reptile"
         >
-          <Typography className={classes.typography}><h3>Got A Question for INTRO?</h3></Typography>
+          <h3 className={classes.typography}>Got A Question for INTRO?</h3>
           <Typography className={classes.typography}>We'll respond to your question or comment as quickly as possible.</Typography>
-        </CardMedia>
+        </CardContent>
         <CardContent>
           <form onSubmit={handleOnSubmit}>
               <TextField
@@ -223,3 +221,5 @@ export default () => {
     </main>
   )
 }
+
+export default ContactForm;
