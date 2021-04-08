@@ -14,7 +14,7 @@ export default function Index() {
   const classes = useStyles();
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth={false}>
       <h1>
           Welcome to <a href="https://introsolution.kr">Intro</a>
         </h1>
@@ -28,8 +28,7 @@ export default function Index() {
         <footer>
         <img src="/logo.png" alt="Intro Logo" className={classes.logo} />
       </footer>
+      asdas
     </Container>
-    
-    
   );
 }
