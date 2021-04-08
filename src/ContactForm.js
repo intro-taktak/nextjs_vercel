@@ -8,6 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab';
 import MessageIcon from '@material-ui/icons/Message';
 import Backdrop from '@material-ui/core/Backdrop';
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
 
 export default () => {
   const [status, setStatus] = useState({
@@ -71,7 +74,10 @@ export default () => {
 
   const useStyles = makeStyles((theme) => ({
     typography: {
-      padding: theme.spacing(2),
+      paddingTop: theme.spacing(1),
+      paddingBottom: theme.spacing(3),
+      paddingLeft: theme.spacing(3),
+      paddingRight: theme.spacing(3),
     },
     fab: {
       position: 'absolute',
@@ -87,6 +93,13 @@ export default () => {
     },
     popover: {
       marginTop: theme.spacing(-5),
+    },
+    media: {
+      backgroundColor: '#c4001a',
+      color: 'white'
+    },
+    contactInput:{
+      paddingBottom: theme.spacing(2),
     }
   }));
 
@@ -120,7 +133,7 @@ export default () => {
           <MessageIcon className={classes.extendedIcon} />
           문의하기
         </Fab>
-        <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
+        <Backdrop className={classes.backdrop} open={open}>
         <Popover
         id={id}
         open={open}
@@ -136,47 +149,64 @@ export default () => {
         }}
         className={classes.popover}
       >
-        <Typography className={classes.typography}>인트로에 문의할 내용이 있나요?</Typography>
+        <Card className={classes.root}>
+        <CardMedia
+          className={classes.media}
+          title="Contemplative Reptile"
+        >
+          <Typography className={classes.typography}><h3>Got A Question for INTRO?</h3></Typography>
+          <Typography className={classes.typography}>We'll respond to your question or comment as quickly as possible.</Typography>
+        </CardMedia>
+        <CardContent>
           <form onSubmit={handleOnSubmit}>
-            <TextField
-              id="phone"
-              type="text"
-              name="phone"
-              onChange={handleOnChange}
-              required
-              value={inputs.phone}
-              label="phone"
-            ></TextField>
-            <br></br>
-            <TextField
-              id="email"
-              type="email"
-              name="_replyto"
-              onChange={handleOnChange}
-              required
-              value={inputs.email}
-              label="email"
-            ></TextField>
-            <br></br>
-            <TextField
-              id="message"
-              name="message"
-              onChange={handleOnChange}
-              required
-              value={inputs.message}
-              label="message"
-              rowsMax={5}
-              multiline
-            />
-            <br/><br/>
-            <Button variant="contained" type="submit" disabled={status.submitting}>
-              {!status.submitting
-                ? !status.submitted
-                  ? 'Submit'
-                  : 'Submitted'
-                : 'Submitting...'}
-            </Button>
-        </form>
+              <TextField
+                className={classes.contactInput}
+                id="phone"
+                type="text"
+                name="phone"
+                onChange={handleOnChange}
+                required
+                value={inputs.phone}
+                label="연락처"
+                fullWidth
+              ></TextField>
+              <br></br>
+              <TextField
+                className={classes.contactInput}
+                id="email"
+                type="email"
+                name="_replyto"
+                onChange={handleOnChange}
+                required
+                value={inputs.email}
+                label="이메일"
+                fullWidth
+              ></TextField>
+              <br></br>
+              <TextField
+                className={classes.contactInput}
+                id="message"
+                name="message"
+                onChange={handleOnChange}
+                required
+                value={inputs.message}
+                label="문의내용"
+                rowsMax={5}
+                multiline
+                fullWidth
+              />
+              <br/><br/>
+              <Button variant="contained" type="submit" disabled={status.submitting} fullWidth>
+                {!status.submitting
+                  ? !status.submitted
+                    ? '제출'
+                    : '제출완료'
+                  : '제출중...'}
+              </Button>
+            </form>
+            </CardContent>
+          </Card>
+        
       </Popover>
       </Backdrop>
       
