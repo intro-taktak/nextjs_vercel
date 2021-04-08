@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
 import NavigationIcon from '@material-ui/icons/Navigation';
+import ContactForm from '../src/ContactForm'
 
 const useStyles = makeStyles((theme) => ({
   fab: {
@@ -42,6 +43,7 @@ export default function Index() {
           <NavigationIcon className={classes.extendedIcon} />
           문의하기
         </Fab>
+        <ContactForm />
         <footer>
         <img src="/logo.png" alt="Intro Logo" className={classes.logo} />
       </footer>
