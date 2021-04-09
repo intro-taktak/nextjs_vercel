@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
     margin: 50
   },
   typo:{
-    marginBottom: 30
+    marginBottom: 30,
+    fontWeight: 800
   }
 }));
 
