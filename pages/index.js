@@ -7,11 +7,11 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   logo: {
     height:43,
-    margin: 20
+    margin: '3%'
   },
   typoRoot:{
     width: '80%',
-    margin: 50
+    margin: '3%'
   },
   typo:{
     marginBottom: 30,
