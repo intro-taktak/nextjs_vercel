@@ -152,7 +152,7 @@ const ContactForm = () => {
           className={classes.media}
           title="Contemplative Reptile"
         >
-          <h3 className={classes.typography}>Got A Question for INTRO?</h3>
+          <h3 className={classes.typography}>👋 Got A Question for INTRO?</h3>
           <Typography className={classes.typography}>We'll respond to your question or comment as quickly as possible.</Typography>
         </CardContent>
         <CardContent>
@@ -194,7 +194,7 @@ const ContactForm = () => {
                 fullWidth
               />
               <br/><br/>
-              <Button variant="contained" type="submit" disabled={status.submitting} fullWidth>
+              <Button variant="contained" type="submit" disabled={status.submitting} fullWidth color="primary">
                 {!status.submitting
                   ? !status.submitted
                     ? '제출'
