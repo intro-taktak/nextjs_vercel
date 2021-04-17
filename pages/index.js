@@ -31,7 +31,7 @@ export default function Index() {
       <Container maxWidth={false}>
       <ThemeProvider theme={theme}>
           <Typography variant="h1" className={classes.typo}>
-            Welcome to Intro
+            Welcome to Intro !
           </Typography>
           <Typography variant="h4" className={classes.typo}>
             Design ❤️ Development
