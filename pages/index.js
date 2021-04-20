@@ -27,7 +27,7 @@ export default function Index() {
 
   return (
     <section>
-      <img src="/logo.png" alt="Intro Logo" className={classes.logo}/>
+      <img src="/logo.svg" alt="Intro Logo" className={classes.logo}/>
       <Container maxWidth={false}>
       <ThemeProvider theme={theme}>
           <Typography variant="h1" className={classes.typo}>

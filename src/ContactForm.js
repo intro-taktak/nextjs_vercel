@@ -61,6 +61,7 @@ const ContactForm = () => {
       data: inputs,
     })
       .then((response) => {
+        isSent();
         handleServerResponse(
           true,
           'Thank you, 메시지가 인트로에게 전달되었습니다.'
@@ -115,11 +116,9 @@ const ContactForm = () => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
+
   return (
     <main>
-
-
-<div>
         <Fab
           variant="extended"
           color="primary"
@@ -132,92 +131,87 @@ const ContactForm = () => {
           문의하기
         </Fab>
         <Backdrop className={classes.backdrop} open={open}>
-        <Popover
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-        transformOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
-        }}
-        className={classes.popover}
-      >
-        <Card className={classes.root}>
-        <CardContent
-          className={classes.media}
-          title="Contemplative Reptile"
+          <Popover
+          id={id}
+          open={open}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }}
+          transformOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+          }}
+          className={classes.popover}
         >
-          <h3 className={classes.typography}>👋 Got A Question for INTRO?</h3>
-          <Typography className={classes.typography}>We'll respond to your question or comment as quickly as possible.</Typography>
-        </CardContent>
-        <CardContent>
-          <form onSubmit={handleOnSubmit}>
-              <TextField
-                className={classes.contactInput}
-                id="phone"
-                type="text"
-                name="phone"
-                onChange={handleOnChange}
-                required
-                value={inputs.phone}
-                label="연락처"
-                fullWidth
-              ></TextField>
-              <br></br>
-              <TextField
-                className={classes.contactInput}
-                id="email"
-                type="email"
-                name="_replyto"
-                onChange={handleOnChange}
-                required
-                value={inputs.email}
-                label="이메일"
-                fullWidth
-              ></TextField>
-              <br></br>
-              <TextField
-                className={classes.contactInput}
-                id="message"
-                name="message"
-                onChange={handleOnChange}
-                required
-                value={inputs.message}
-                label="문의내용"
-                rowsMax={5}
-                multiline
-                fullWidth
-              />
-              <br/><br/>
-              <Button variant="contained" type="submit" disabled={status.submitting} fullWidth color="primary">
-                {!status.submitting
-                  ? !status.submitted
-                    ? '제출'
-                    : '제출완료'
-                  : '제출중...'}
-              </Button>
-            </form>
-            </CardContent>
-          </Card>
-        
-      </Popover>
+          <Card className={classes.root}>
+          <CardContent
+            className={classes.media}
+            title="Contemplative Reptile"
+          >
+            <h3 className={classes.typography}>👋 Got A Question for INTRO?</h3>
+            <Typography className={classes.typography}>We'll respond to your question or comment as quickly as possible.</Typography>
+          </CardContent>
+          <CardContent>
+            <form onSubmit={handleOnSubmit}>
+                <TextField
+                  className={classes.contactInput}
+                  id="phone"
+                  type="text"
+                  name="phone"
+                  onChange={handleOnChange}
+                  required
+                  value={inputs.phone}
+                  label="연락처"
+                  fullWidth
+                ></TextField>
+                <br></br>
+                <TextField
+                  className={classes.contactInput}
+                  id="email"
+                  type="email"
+                  name="_replyto"
+                  onChange={handleOnChange}
+                  required
+                  value={inputs.email}
+                  label="이메일"
+                  fullWidth
+                ></TextField>
+                <br></br>
+                <TextField
+                  className={classes.contactInput}
+                  id="message"
+                  name="message"
+                  onChange={handleOnChange}
+                  required
+                  value={inputs.message}
+                  label="문의내용"
+                  rowsMax={5}
+                  multiline
+                  fullWidth
+                />
+                <br/><br/>
+                <Button variant="contained" type="submit" disabled={status.submitting} fullWidth color="primary">
+                  {!status.submitting
+                    ? !status.submitted
+                      ? '제출'
+                      : '제출완료'
+                    : '제출중...'}
+                </Button>
+              </form>
+              {status.info.error && (
+                <div className="error">Error: {status.info.msg}</div>
+              )}
+              {!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
+              </CardContent>
+            </Card>
+          
+        </Popover>
       </Backdrop>
       
-    </div>
-
-
-
-
       
-      {status.info.error && (
-        <div className="error">Error: {status.info.msg}</div>
-      )}
-      {!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
     </main>
   )
 }
