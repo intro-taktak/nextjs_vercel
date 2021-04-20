@@ -5,6 +5,10 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 
+import AOS from 'aos';
+
+import "aos/dist/aos.css";
+
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 
@@ -14,6 +18,12 @@ export default function MyApp(props) {
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
+
+    AOS.init({
+      easing: "ease-out-cubic",
+      once: false,
+      offset: 50,
+    });
   }, []);
 
   return (
