@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   logo: {
-    height:43,
+    height:'50px',
     margin: '3%'
   },
   typoRoot:{
@@ -50,10 +50,10 @@ export default function Index() {
           <div className={classes.nm}>R</div>
           <div className={classes.nm}>O</div>
           <br/>
-          <Typography variant="h4" className={classes.typo}>
+          <Typography variant="h5" className={classes.typo}>
             Design ❤️ Development
           </Typography>
-          <Typography variant="h5" className={classes.typo}>
+          <Typography variant="h6" className={classes.typo}>
             페이지 준비중입니다.
           </Typography>
         </ThemeProvider>
