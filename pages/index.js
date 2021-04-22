@@ -61,11 +61,16 @@ export default function Index() {
           <img src="/logo.svg" alt="Intro Logo" className={classes.logo} />
           <div className={classes.jumbotronDiv}>
             <Typography variant="h3" className={classes.typo}>
-              Design ❤️ Development
+              Trust, Youth, Consilience
             </Typography>
-            we are INTRO<br/><br/><br/><br/><br/>
+            <br/>
+            <Typography variant="h5" className={classes.typo}>
+              소프트웨어와 디자인, 통섭적 역량으로 새로운 가치를 만듭니다.
+            </Typography>
+            
+            <br/><br/><br/><br/>
           </div>
-        </CardMedia><br/>
+        </CardMedia>
 
 
           <ContactForm />
@@ -92,7 +97,7 @@ export default function Index() {
                 <Grid item>
                   <br/>
                   <Typography variant="subtitle1" component="p">
-                        대표이사 조영탁
+                        대표이사 조 영 탁
                   </Typography>
                   <Typography variant="subtitle1" component="p">
                         이메일 contact@introsolution.kr
