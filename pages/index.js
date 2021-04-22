@@ -31,7 +31,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 30
   },
   logo: {
-    width: '15%',
+    width: '25%',
+    maxWidth: '180px',
     margin: '5%',
   },
   flogo: {
