@@ -108,7 +108,7 @@ export default function Index() {
                         이메일 contact@introsolution.kr
                   </Typography>
                   <Typography variant="subtitle1" component="p">
-                        주소 서울시 구로구 고척동 중앙로6길 16 2층 인트로
+                        주소 서울시 구로구 중앙로6길 16 2층 인트로
                   </Typography>
                   <br/>
                 </Grid>
