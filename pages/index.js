@@ -79,48 +79,48 @@ export default function Index() {
             <Typography variant="h5" className={classes.typo}>
               소프트웨어와 디자인, 통섭적 역량으로 새로운 가치를 만듭니다.
             </Typography>
-            
             <br/><br/><br/><br/>
           </div>
         </CardMedia>
 
+        
 
-          <ContactForm />
-          <footer className={classes.footer}>
-                <Grid
-                  container
-                  direction="row"
-                  justify="space-around"
-                  alignItems="center"
-                >
+        <ContactForm />
+        <footer className={classes.footer}>
+              <Grid
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
+              >
                 <Grid item>
-                 <br/>
+                  <br/>
                   <img src="/wst.png" alt="Intro Logo" className={classes.flogo} />
                   <Typography variant="body2" align="center">
-                  {'Copyright © '}
+                    {'Copyright © '}
                   <MuiLink color="inherit" href="https://introsolution.kr">
                       INTRO
                   </MuiLink>{' '}
-                  {new Date().getFullYear()}
-                  {'.'}
+                    {new Date().getFullYear()}
+                    {'.'}
                   </Typography>
                   <br/>
                 </Grid>
                 <Grid item>
                   <br/>
                   <Typography variant="subtitle1" component="p">
-                        <div className={classes.footersub}>대표이사</div>조 영 탁
+                    <div className={classes.footersub}>대표이사</div>조 영 탁
                   </Typography>
                   <Typography variant="subtitle1" component="p">
-                  <div className={classes.footersub}>이메일</div> contact@introsolution.kr
+                    <div className={classes.footersub}>이메일</div>contact@introsolution.kr
                   </Typography>
                   <Typography variant="subtitle1" component="p">
-                  <div className={classes.footersub}>주소</div> 서울시 구로구 중앙로6길 16 2층 인트로
+                    <div className={classes.footersub}>주소</div>서울시 구로구 중앙로6길 16 2층 인트로
                   </Typography>
                   <br/>
                 </Grid>
-                </Grid>
-            </footer>
+              </Grid>
+          </footer>
     </section>
   );
 }
