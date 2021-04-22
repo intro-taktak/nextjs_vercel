@@ -51,9 +51,16 @@ const useStyles = makeStyles((theme) => ({
   },
   footer: {
     backgroundColor: '#292728',
-    color: 'white',
+    color: 'lightgray',
     padding: 30
   },
+  footersub:{
+    color: 'white',
+    width: 90,
+    float: "left",
+    fontWeight: 800,
+    marginLeft: 20,
+  }
 }));
 
 
@@ -102,13 +109,13 @@ export default function Index() {
                 <Grid item>
                   <br/>
                   <Typography variant="subtitle1" component="p">
-                        대표이사 조 영 탁
+                        <div className={classes.footersub}>대표이사</div>조 영 탁
                   </Typography>
                   <Typography variant="subtitle1" component="p">
-                        이메일 contact@introsolution.kr
+                  <div className={classes.footersub}>이메일</div> contact@introsolution.kr
                   </Typography>
                   <Typography variant="subtitle1" component="p">
-                        주소 서울시 구로구 중앙로6길 16 2층 인트로
+                  <div className={classes.footersub}>주소</div> 서울시 구로구 중앙로6길 16 2층 인트로
                   </Typography>
                   <br/>
                 </Grid>
