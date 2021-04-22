@@ -1,14 +1,13 @@
 import React from 'react';
-import { makeStyles, createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import ContactForm from '../src/neumorphism/ContactForm'
+import { makeStyles } from '@material-ui/core/styles';
+import ContactForm from '../src/ContactForm'
+import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import MuiLink from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
-  logo: {
-    height: '50px',
-    margin: '3%'
-  },
+  
   typoRoot: {
     width: '80%',
     margin: '3%'
@@ -30,62 +29,81 @@ const useStyles = makeStyles((theme) => ({
     float: 'left',
     marginRight: 30,
     marginBottom: 30
-  }
+  },
+  logo: {
+    height: 42,
+    margin: '5%',
+  },
+  image: {
+    width: '100%',
+    backgroundColor: 'red'
+  },
+  jumbotron: {
+    width: '100%',
+  },
+  jumbotronDiv: {
+    textAlign: 'center',
+  },
+  footer: {
+    backgroundColor: '#292728',
+    color: 'white',
+    padding: 30
+  },
 }));
 
 
 export default function Index() {
   const classes = useStyles();
-  let theme = createMuiTheme();
-  theme = responsiveFontSizes(theme);
 
   return (
     <section>
-      <img src="/logo.svg" alt="Intro Logo" className={classes.logo} />
-      <Container maxWidth={false}>
-        <ThemeProvider theme={theme}>
-          <div className={classes.nm}
-            data-aos="fade-up"
-            data-aos-offset="200"
-            data-aos-duration="500"
-          >I</div>
-          <div className={classes.nm}
-            data-aos="fade-up"
-            data-aos-offset="200"
-            data-aos-duration="500"
-            data-aos-delay="50"
-          >N</div>
-          <div className={classes.nm}
-            data-aos="fade-up"
-            data-aos-offset="200"
-            data-aos-duration="500"
-            data-aos-delay="100"
-          >T</div>
-          <div className={classes.nm}
-            data-aos="fade-up"
-            data-aos-offset="200"
-            data-aos-duration="500"
-            data-aos-delay="150"
-          >R</div>
-          <div className={classes.nm}
-            data-aos="fade-up"
-            data-aos-offset="200"
-            data-aos-duration="500"
-            data-aos-delay="200"
-          >O</div>
-          <div>
-            <Typography variant="h5" className={classes.typo}>
+        <CardMedia className={classes.jumbotron} image="/ux-store-jJT2r2n7lYA-unsplash.jpg">
+          <img src="/logo.svg" alt="Intro Logo" className={classes.logo} />
+          <div className={classes.jumbotronDiv}>
+            <Typography variant="h3" className={classes.typo}>
               Design ❤️ Development
             </Typography>
-            <Typography variant="h6" className={classes.typo}>
-              페이지 준비중입니다.
-            </Typography>
+            we are INTRO<br/><br/><br/><br/><br/>
           </div>
-        </ThemeProvider>
-        <ContactForm />
-        <footer>
-        </footer>
-      </Container>
+        </CardMedia><br/>
+
+
+          <ContactForm />
+          <footer className={classes.footer}>
+                <Grid
+                  container
+                  direction="row"
+                  justify="space-around"
+                  alignItems="center"
+                >
+                <Grid item>
+                 <br/>
+                  <img src="/wst.png" alt="Intro Logo" className={classes.logo} />
+                  <Typography variant="body2" align="center">
+                  {'Copyright © '}
+                  <MuiLink color="inherit" href="https://introsolution.kr">
+                      INTRO
+                  </MuiLink>{' '}
+                  {new Date().getFullYear()}
+                  {'.'}
+                  </Typography>
+                  <br/>
+                </Grid>
+                <Grid item>
+                  <br/>
+                  <Typography variant="subtitle1" component="p">
+                        대표이사 조영탁
+                  </Typography>
+                  <Typography variant="subtitle1" component="p">
+                        이메일 contact@introsolution.kr
+                  </Typography>
+                  <Typography variant="subtitle1" component="p">
+                        주소 서울시 구로구 고척동 중앙로6길 16 2층 인트로
+                  </Typography>
+                  <br/>
+                </Grid>
+                </Grid>
+            </footer>
     </section>
   );
 }

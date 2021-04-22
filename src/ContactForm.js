@@ -94,7 +94,7 @@ const ContactForm = () => {
       marginTop: theme.spacing(-3),
     },
     media: {
-      backgroundColor: '#c4001a',
+      backgroundColor: '#292728',
       color: 'white'
     },
     contactInput:{
@@ -127,7 +127,7 @@ const ContactForm = () => {
           onClick={handleClick}
           aria-describedby={id}
         >
-          <MessageIcon className={classes.extendedIcon} />
+          👋
           문의하기
         </Fab>
         <Backdrop className={classes.backdrop} open={open}>

@@ -31,7 +31,7 @@ export default function MyApp(props) {
       <Head>
         <title>인트로</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <meta property="og:description" content="Intro of computer software"/>
+        <meta property="og:description" content="Total Software and Web Solutions"/>
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
