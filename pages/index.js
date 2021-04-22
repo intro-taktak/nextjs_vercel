@@ -31,7 +31,11 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 30
   },
   logo: {
-    height: 42,
+    width: '15%',
+    margin: '5%',
+  },
+  flogo: {
+    width: 200,
     margin: '5%',
   },
   image: {
@@ -83,7 +87,7 @@ export default function Index() {
                 >
                 <Grid item>
                  <br/>
-                  <img src="/wst.png" alt="Intro Logo" className={classes.logo} />
+                  <img src="/wst.png" alt="Intro Logo" className={classes.flogo} />
                   <Typography variant="body2" align="center">
                   {'Copyright © '}
                   <MuiLink color="inherit" href="https://introsolution.kr">
