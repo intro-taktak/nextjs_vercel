@@ -108,13 +108,13 @@ export default function Index() {
                 </Grid>
                 <Grid item>
                   <br/>
-                  <Typography variant="subtitle1" component="p">
+                  <Typography variant="subtitle1">
                     <div className={classes.footersub}>대표이사</div>조 영 탁
                   </Typography>
-                  <Typography variant="subtitle1" component="p">
+                  <Typography variant="subtitle1">
                     <div className={classes.footersub}>이메일</div>contact@introsolution.kr
                   </Typography>
-                  <Typography variant="subtitle1" component="p">
+                  <Typography variant="subtitle1">
                     <div className={classes.footersub}>주소</div>서울시 구로구 중앙로6길 16 2층
                   </Typography>
                   <br/>
