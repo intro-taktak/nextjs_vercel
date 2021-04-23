@@ -56,10 +56,10 @@ const useStyles = makeStyles((theme) => ({
   },
   footersub:{
     color: 'white',
-    width: 90,
+    width: 70,
     float: "left",
     fontWeight: 800,
-    marginLeft: 20,
+    marginLeft: 15,
   }
 }));
 
@@ -115,7 +115,7 @@ export default function Index() {
                     <div className={classes.footersub}>이메일</div>contact@introsolution.kr
                   </Typography>
                   <Typography variant="subtitle1" component="p">
-                    <div className={classes.footersub}>주소</div>서울시 구로구 중앙로6길 16 2층 인트로
+                    <div className={classes.footersub}>주소</div>서울시 구로구 중앙로6길 16 2층
                   </Typography>
                   <br/>
                 </Grid>
