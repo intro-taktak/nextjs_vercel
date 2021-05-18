@@ -60,6 +60,13 @@ const useStyles = makeStyles((theme) => ({
     float: "left",
     fontWeight: 800,
     marginLeft: 15,
+  },
+  c1: {
+    marginTop: 100,
+    marginBottom: 100
+  },
+  contentImage: {
+    width: '300px',
   }
 }));
 
@@ -83,7 +90,19 @@ export default function Index() {
           </div>
         </CardMedia>
 
-        
+        <Grid
+          container
+          direction="row"
+          justify="space-evenly"
+          alignItems="center"
+          className={classes.c1}
+        >
+          <Grid item>
+            <img src="/balazs-ketyi-LPWl2pEVGKc-unsplash.jpg" alt="c1" className={classes.contentImage} />
+          </Grid>
+
+        </Grid>
+
 
         <ContactForm />
         <footer className={classes.footer}>
@@ -97,7 +116,7 @@ export default function Index() {
                   <br/>
                   <img src="/wst.png" alt="Intro Logo" className={classes.flogo} />
                   <Typography variant="body2" align="center">
-                    {'Copyright © '}
+                    {'Copyright '}
                   <MuiLink color="inherit" href="https://introsolution.kr">
                       INTRO
                   </MuiLink>{' '}
