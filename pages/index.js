@@ -98,17 +98,7 @@ export default function Index() {
             </Typography>
             <br/><br/><br/><br/>
           </div>
-        </CardMedia>
-
-        <Grid
-          container
-          direction="row"
-          justify="space-evenly"
-          alignItems="center"
-          className={classes.c1}
-        >
-
-        </Grid>
+        </CardMedia> 
 
 
         <ContactForm />
