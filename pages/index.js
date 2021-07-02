@@ -107,9 +107,6 @@ export default function Index() {
           alignItems="center"
           className={classes.c1}
         >
-          <Grid item>
-            <img src="/balazs-ketyi-LPWl2pEVGKc-unsplash.jpg" alt="c1" className={classes.contentImage} />
-          </Grid>
 
         </Grid>
 
