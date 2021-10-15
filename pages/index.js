@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import MuiLink from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Head from 'next/head';
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   
@@ -14,6 +15,11 @@ const useStyles = makeStyles((theme) => ({
     margin: '3%'
   },
   typo: {
+    marginBottom: 22,
+    fontWeight: 800,
+    textShadow: '13px 13px 26px #989a9c, -13px -13px 26px #ffffff;',
+  },
+  typo2: {
     marginBottom: 22,
     fontWeight: 800,
     textShadow: '13px 13px 26px #989a9c, -13px -13px 26px #ffffff;',
@@ -68,6 +74,9 @@ const useStyles = makeStyles((theme) => ({
   },
   contentImage: {
     width: '300px',
+  },
+  dinga:{
+    width: '100%',
   }
 }));
 
@@ -99,8 +108,7 @@ export default function Index() {
             <br/><br/><br/><br/>
           </div>
         </CardMedia> 
-
-
+        <img src="/dinga.jpg" alt="Intro Logo" className={classes.dinga} />
         <ContactForm />
         <footer className={classes.footer}>
               <Grid
